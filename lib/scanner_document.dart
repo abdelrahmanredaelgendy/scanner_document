@@ -14,9 +14,9 @@ export 'ios_options.dart';
 ///
 /// Example usage:
 /// ```dart
-/// final images = await DocumentScanner.getPictures();
+/// final images = await ScannerDocument.getPictures();
 /// ```
-class DocumentScanner {
+class ScannerDocument {
   static const MethodChannel _channel =
       MethodChannel('document_scanner');
 
@@ -39,16 +39,16 @@ class DocumentScanner {
   /// Example:
   /// ```dart
   /// // Simple usage
-  /// final images = await DocumentScanner.getPictures();
+  /// final images = await ScannerDocument.getPictures();
   ///
   /// // Android with custom options
-  /// final images = await DocumentScanner.getPictures(
+  /// final images = await ScannerDocument.getPictures(
   ///   noOfPages: 5,
   ///   isGalleryImportAllowed: true,
   /// );
   ///
   /// // iOS with JPEG format
-  /// final images = await DocumentScanner.getPictures(
+  /// final images = await ScannerDocument.getPictures(
   ///   iosScannerOptions: IosScannerOptions(
   ///     imageFormat: IosImageFormat.jpg,
   ///     jpgCompressionQuality: 0.8,

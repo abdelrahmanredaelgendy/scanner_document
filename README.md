@@ -104,14 +104,14 @@ end
 The easiest way to get a list of images is:
 
 ```dart
-   final imagesPath = await DocumentScanner.getPictures();
+   final imagesPath = await ScannerDocument.getPictures();
 ```
 ### Android Specific
 
 There are some features in Android that allow you to adjust the scanner that will be ignored in iOS:
 
 ```dart
-   final imagesPath = await DocumentScanner.getPictures(
+   final imagesPath = await ScannerDocument.getPictures(
       noOfPages: 1, // Limit the number of pages to 1
       isGalleryImportAllowed, // Allow the user to also pick an image from his gallery
    );
@@ -123,7 +123,7 @@ On iOS it is possible to configure which image format should be used to save of 
 
 ```dart
    // Returns images in JPEG format with a compression quality of 50%.
-   final imagesPath = await DocumentScanner.getPictures(
+   final imagesPath = await ScannerDocument.getPictures(
       iosScannerOptions: IosScannerOptions(
          imageFormat: IosImageFormat.jpg,
          jpgCompressionQuality: 0.5,

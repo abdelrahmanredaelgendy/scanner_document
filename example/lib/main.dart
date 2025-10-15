@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
   void onPressed() async {
     List<String> pictures;
     try {
-      pictures = await DocumentScanner.getPictures(
+      pictures = await ScannerDocument.getPictures(
               iosScannerOptions: IosScannerOptions(
             imageFormat: IosImageFormat.jpg,
             jpgCompressionQuality: 0.5,
