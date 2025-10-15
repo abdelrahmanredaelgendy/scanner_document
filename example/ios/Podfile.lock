@@ -1,0 +1,42 @@
+PODS:
+  - document_scanner (1.0.0):
+    - Flutter
+    - WeScan
+  - Flutter (1.0.0)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - permission_handler_apple (9.3.0):
+    - Flutter
+  - WeScan (1.7.0)
+
+DEPENDENCIES:
+  - document_scanner (from `.symlinks/plugins/document_scanner/ios`)
+  - Flutter (from `Flutter`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+
+SPEC REPOS:
+  trunk:
+    - WeScan
+
+EXTERNAL SOURCES:
+  document_scanner:
+    :path: ".symlinks/plugins/document_scanner/ios"
+  Flutter:
+    :path: Flutter
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+
+SPEC CHECKSUMS:
+  document_scanner: e40ffbfca7076847bde9bcd695a7bc9e8be6d16b
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
+  WeScan: fed582f6c38014d529afb5aa9ffd1bad38fc72b7
+
+PODFILE CHECKSUM: e78c989774f3b5b54daf69ce13097109fe4b0da3
+
+COCOAPODS: 1.16.2

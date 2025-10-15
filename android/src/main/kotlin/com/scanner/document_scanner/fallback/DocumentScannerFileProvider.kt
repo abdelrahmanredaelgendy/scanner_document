@@ -1,0 +1,6 @@
+package com.scanner.document_scanner.fallback
+
+import androidx.core.content.FileProvider
+
+class DocumentScannerFileProvider: FileProvider() {
+}
