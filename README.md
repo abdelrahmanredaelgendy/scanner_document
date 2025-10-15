@@ -82,6 +82,23 @@ platform :ios, '13.0'
    end
    ```
 
+#### Fix build on Xcode 15
+If you encounter build issues on Xcode 15, you need to add the WeScan pod to your `ios/Podfile`. Add the following line inside the `target 'Runner' do` block:
+
+```ruby
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  # Add this line for WeScan support
+  pod 'WeScan', :path => '.symlinks/plugins/scanner_document/ios/WeScan-3.0.0'
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  # ... rest of your post_install configurations
+end
+```
+
 ## How to use ?
 
 The easiest way to get a list of images is:
