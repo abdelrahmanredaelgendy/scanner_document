@@ -1,3 +1,6 @@
+## 1.0.2
+* Documentation improvements.
+
 ## 1.0.1
 * Added Xcode 15 fix instructions to README for WeScan pod configuration.
 * Fixed documentation references for IosImageFormat enum.
