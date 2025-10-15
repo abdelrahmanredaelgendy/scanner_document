@@ -1,8 +1,8 @@
 name: scanner_document
 description: A document scanner plugin for Flutter. Scan and crop documents automatically on iOS and Android with ML Kit support.
 version: 1.0.0
-homepage: https://github.com/scanner
-repository: https://github.com/scanner/scanner_document
+homepage: https://github.com/abdelrahmanredaelgendy/scanner_document
+repository: https://github.com/abdelrahmanredaelgendy/scanner_document
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
