@@ -23,6 +23,8 @@ import com.scanner.document_scanner.fallback.ui.ImageCropView
 import com.scanner.document_scanner.fallback.utils.CameraUtil
 import com.scanner.document_scanner.fallback.utils.FileUtil
 import com.scanner.document_scanner.fallback.utils.ImageUtil
+import com.scanner.document_scanner.fallback.utils.OpenCVDocumentDetector
+import org.opencv.android.OpenCVLoader
 import java.io.File
 /**
  * This class contains the main document scanner code. It opens the camera, lets the user
@@ -149,12 +151,20 @@ class DocumentScannerActivity : AppCompatActivity() {
     private lateinit var imageView: ImageCropView
 
     /**
+     * @property openCVInitialized flag to track if OpenCV is initialized
+     */
+    private var openCVInitialized = false
+
+    /**
      * called when activity is created
      *
      * @param savedInstanceState persisted data that maintains state
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialize OpenCV
+        openCVInitialized = OpenCVLoader.initLocal()
 
         // Show cropper, accept crop button, add new document button, and
         // retake photo button. Since we open the camera in a few lines, the user
@@ -216,14 +226,25 @@ class DocumentScannerActivity : AppCompatActivity() {
 
     /**
      * Pass in a photo of a document, and get back 4 corner points (top left, top right, bottom
-     * right, bottom left). This tries to detect document corners, but falls back to photo corners
-     * with slight margin in case we can't detect document corners.
+     * right, bottom left). This tries to detect document corners using OpenCV, but falls back to
+     * photo corners with slight margin in case we can't detect document corners.
      *
      * @param photo the original photo with a rectangular document
-     * @return a List of 4 OpenCV points (document corners)
+     * @return a List of 4 corner points (document corners)
      */
     private fun getDocumentCorners(photo: Bitmap): List<Point> {
-        val cornerPoints: List<Point>? = null
+        var cornerPoints: List<Point>? = null
+
+        // Try to detect corners using OpenCV if initialized
+        if (openCVInitialized) {
+            try {
+                val detector = OpenCVDocumentDetector()
+                cornerPoints = detector.detectCorners(photo)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                // Will fall back to default corners
+            }
+        }
 
         // if cornerPoints is null then default the corners to the photo bounds with a margin
         return cornerPoints ?: listOf(

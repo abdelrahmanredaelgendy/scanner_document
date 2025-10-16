@@ -1,3 +1,9 @@
+## 1.0.6
+* Replaced Google ML Kit document scanner with OpenCV 4.10.0 for edge detection.
+* Implemented custom document corner detection using OpenCV algorithms (Canny edge detection, contour finding).
+* Removed dependency on com.google.android.gms:play-services-mlkit-document-scanner.
+* Improved document edge detection accuracy with advanced image processing techniques.
+
 ## 1.0.5
 * Version bump for package updates.
 
