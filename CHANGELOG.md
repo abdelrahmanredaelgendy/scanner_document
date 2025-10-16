@@ -1,3 +1,10 @@
+## 1.0.10
+* Removed OpenCV dependencies completely from Android implementation.
+* Reverted to ML Kit document scanner for better stability.
+* Updated Android build dependencies (Gradle 8.7.0, AGP 8.6.0, Kotlin 2.1.0).
+* Simplified document corner detection with manual adjustment support.
+* Improved build compatibility and reduced package size.
+
 ## 1.0.9
 * Fixed 16KB page size support by switching to opencv-android package.
 * Implemented auto-capture functionality using OpenCV document detection.

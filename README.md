@@ -139,7 +139,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  scanner_document: ^1.0.2
+  scanner_document: ^1.0.10
 ```
 
 Then run:
