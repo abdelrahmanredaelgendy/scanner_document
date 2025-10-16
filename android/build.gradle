@@ -9,12 +9,12 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.6.0'
+        classpath 'com.android.tools.build:gradle:8.7.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-allprojects {
+rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
@@ -58,3 +58,4 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1'
 }
+

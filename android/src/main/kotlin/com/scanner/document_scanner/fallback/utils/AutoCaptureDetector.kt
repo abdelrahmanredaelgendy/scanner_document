@@ -6,7 +6,7 @@ import kotlin.math.abs
 import kotlin.math.sqrt
 
 /**
- * Auto-capture detector using OpenCV document detection
+ * Auto-capture detector for document scanning
  * Determines if a document is stable and well-aligned for automatic capture
  */
 class AutoCaptureDetector {
