@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'scanner_document'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'A Flutter document scanner plugin.'
   s.description      = <<-DESC
 A Flutter document scanner plugin with automatic edge detection and cropping.

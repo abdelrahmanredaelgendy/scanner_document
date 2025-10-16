@@ -1,3 +1,8 @@
+## 1.0.7
+* Fixed missing AndroidX dependencies (appcompat and core-ktx).
+* Added androidx.appcompat:appcompat:1.7.0 dependency.
+* Added androidx.core:core-ktx:1.13.1 dependency.
+
 ## 1.0.6
 * Replaced Google ML Kit document scanner with OpenCV 4.10.0 for edge detection.
 * Implemented custom document corner detection using OpenCV algorithms (Canny edge detection, contour finding).
