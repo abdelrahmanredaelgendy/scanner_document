@@ -2,19 +2,19 @@ group 'com.scanner.document_scanner'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.22'
+    ext.kotlin_version = '2.1.0'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.7.0'
+        classpath 'com.android.tools.build:gradle:8.6.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-rootProject.allprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
@@ -27,7 +27,8 @@ apply plugin: 'kotlin-android'
 android {
     namespace 'com.scanner.document_scanner'
 
-    compileSdk 35
+    compileSdk 36
+//    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,24 +44,17 @@ android {
     }
 
     defaultConfig {
-        minSdk 21
-
-        // Support for 16KB page size
+        minSdkVersion 24
+        targetSdk 35
+        multiDexEnabled true
+        // Support for 16 KB page sizes - exclude x86_64 which has compatibility issues
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
         }
-    }
-
-    // Enable 16KB page size support
-    buildFeatures {
-        buildConfig = true
     }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'org.opencv:opencv-android:4.10.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1'
 }
-
