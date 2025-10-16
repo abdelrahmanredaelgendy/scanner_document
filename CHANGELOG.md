@@ -1,3 +1,6 @@
+## 1.0.5
+* Version bump for package updates.
+
 ## 1.0.4
 * Version bump for package updates.
 

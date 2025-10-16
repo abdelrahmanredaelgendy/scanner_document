@@ -17,8 +17,7 @@ export 'ios_options.dart';
 /// final images = await ScannerDocument.getPictures();
 /// ```
 class ScannerDocument {
-  static const MethodChannel _channel =
-      MethodChannel('document_scanner');
+  static const MethodChannel _channel = MethodChannel('document_scanner');
 
   /// Starts the document scanning workflow and returns a list of file paths to the scanned images.
   ///
