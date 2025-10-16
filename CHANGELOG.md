@@ -1,3 +1,10 @@
+## 1.0.9
+* Fixed 16KB page size support by switching to opencv-android package.
+* Implemented auto-capture functionality using OpenCV document detection.
+* Added AutoCaptureDetector for stable document detection.
+* Auto-capture triggers when document is stable for consistent frames.
+* Improved document detection stability and accuracy.
+
 ## 1.0.8
 * Added support for Android 16KB page size.
 * Added NDK ABI filters for all supported architectures.
