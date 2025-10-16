@@ -1,3 +1,9 @@
+## 1.0.8
+* Added support for Android 16KB page size.
+* Added NDK ABI filters for all supported architectures.
+* Created gradle.properties for plugin configuration.
+* Enabled BuildConfig feature for better compatibility.
+
 ## 1.0.7
 * Fixed missing AndroidX dependencies (appcompat and core-ktx).
 * Added androidx.appcompat:appcompat:1.7.0 dependency.
