@@ -44,6 +44,16 @@ android {
 
     defaultConfig {
         minSdk 21
+
+        // Support for 16KB page size
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+
+    // Enable 16KB page size support
+    buildFeatures {
+        buildConfig = true
     }
 }
 
