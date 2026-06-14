@@ -1,3 +1,8 @@
+## 1.1.0
+* Added Swift Package Manager (SPM) support for iOS; the plugin no longer triggers Flutter's "does not support Swift Package Manager" warning.
+* Restructured the iOS plugin into the Swift Package layout, shared by both CocoaPods and SPM (no duplicated sources). CocoaPods remains fully supported.
+* Replaced the Objective-C registration shim with a pure-Swift `DocumentScannerPlugin`.
+
 ## 1.0.10
 * Removed OpenCV dependencies completely from Android implementation.
 * Reverted to ML Kit document scanner for better stability.

@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'scanner_document'
-  s.version          = '1.0.10'
+  s.version          = '1.1.0'
   s.summary          = 'A Flutter document scanner plugin.'
   s.description      = <<-DESC
 A Flutter document scanner plugin with automatic edge detection and cropping.
@@ -13,9 +13,11 @@ A Flutter document scanner plugin with automatic edge detection and cropping.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Scanner Team' => 'info@scanner.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*', 'WeScan-3.0.0/Sources/WeScan/**/*.swift'
-  s.exclude_files = 'Classes/ShutterButton.swift'
-  s.resources        = 'Assets/**/*', 'WeScan-3.0.0/Sources/WeScan/**/*.{xcassets,strings}'
+  # Source lives in the Swift Package layout so CocoaPods and Swift Package
+  # Manager share a single copy of the code.
+  s.source_files = 'scanner_document/Sources/scanner_document/**/*.swift'
+  s.resources        = 'scanner_document/Sources/scanner_document/Resources/**/*',
+                       'scanner_document/Sources/scanner_document/WeScan/Resources/**/*.{xcassets,strings}'
   s.dependency 'Flutter'
   s.platform = :ios, '13.0'
 
